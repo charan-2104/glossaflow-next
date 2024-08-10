@@ -43,7 +43,6 @@ export const Header = () => {
                             </Button>
                         </SignInButton>
                     </SignedOut>
-
                 </ClerkLoaded>
             </div>
         </header>

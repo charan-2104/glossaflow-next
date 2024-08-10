@@ -4,6 +4,9 @@ import {
     ClerkLoading,
     ClerkLoaded,
     UserButton,
+    UserProfile,
+    SignedOut,
+    SignOutButton,
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -31,7 +34,6 @@ export const Sidebar = ({className}: Props) => {
                     </span>
                 </h1>
             </div>
-
             </Link>
             <div className="flex flex-col gap-y-2 flex-1">
                 <SidebarItem label="Learn" href="/learn" iconSrc="/learn.svg"></SidebarItem>
@@ -44,7 +46,9 @@ export const Sidebar = ({className}: Props) => {
                     <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
                 </ClerkLoading>
                 <ClerkLoaded>
-                    <UserButton />
+                    <UserButton>
+                        <SignOutButton />
+                    </UserButton>
                 </ClerkLoaded>
             </div>
         </div>
