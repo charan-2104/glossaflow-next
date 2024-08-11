@@ -1,15 +1,12 @@
-import Link from "next/link";
-import Image from "next/image";
+import { cn } from "@/lib/utils";
 import {
-    ClerkLoading,
     ClerkLoaded,
-    UserButton,
-    UserProfile,
-    SignedOut,
-    SignOutButton,
+    ClerkLoading,
+    UserButton
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 import { SidebarItem } from "./sidebar-item";
 
 
@@ -41,14 +38,12 @@ export const Sidebar = ({className}: Props) => {
                 <SidebarItem label="quests" href="/quests" iconSrc="/quests.svg"></SidebarItem>
                 <SidebarItem label="shop" href="/shop" iconSrc="/shop.svg"></SidebarItem>
             </div>
-            <div className="p-4">
+            <div className="p-4 ">
                 <ClerkLoading>
                     <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
                 </ClerkLoading>
                 <ClerkLoaded>
-                    <UserButton>
-                        <SignOutButton />
-                    </UserButton>
+                        <UserButton />                    
                 </ClerkLoaded>
             </div>
         </div>
